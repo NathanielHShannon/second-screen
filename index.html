@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Second Screen</title>
+<meta name="description" content="An ambient dashboard for your spare monitor. Pin clocks, timers and notes onto a scene in true perspective.">
+<meta name="theme-color" content="#0b0c10">
+<meta property="og:title" content="Second Screen">
+<meta property="og:description" content="An ambient dashboard for your spare monitor. Pin clocks, timers and notes onto a scene in true perspective.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;600&family=Oswald:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div id="spill" aria-hidden="true"></div>
+
+<main id="stage" aria-label="Dashboard">
+  <div id="backdrop" aria-hidden="true"></div>
+  <div id="screens"></div>
+  <svg id="surfaces" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div id="widgets"></div>
+</main>
+
+<svg id="overlay" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+<div id="handles" data-ui></div>
+
+<div id="modebar" class="glass-ui" data-ui hidden role="status">
+  <span id="modeText"></span>
+  <button class="btn" id="modeDone" type="button" hidden>Finish</button>
+  <button class="btn" id="modeCancel" type="button">Cancel <span class="kbd">Esc</span></button>
+</div>
+
+<aside id="inspector" class="glass-ui" data-ui aria-label="Inspector"></aside>
+<button id="insToggle" class="btn icon glass-ui" data-ui type="button" aria-label="Show the inspector panel" data-tip="Show panel (I)"></button>
+
+<nav id="dock" class="glass-ui" data-ui aria-label="Editing tools">
+  <button class="btn primary" id="dAdd" type="button" data-tip="Add a widget (A)"><span data-icon="plus"></span><span class="lbl">Add widget</span></button>
+  <button class="btn" id="dSurface" type="button" data-tip="Draw a perspective grid (G)"><span data-icon="grid"></span><span class="lbl">Surface</span></button>
+  <button class="btn" id="dScreen" type="button" data-tip="Trace a screen into the scene (S)"><span data-icon="screen"></span><span class="lbl">Screen</span></button>
+  <div class="sep"></div>
+  <button class="btn" id="dScenes" type="button" data-tip="Starter scenes"><span data-icon="layers"></span><span class="lbl">Scenes</span></button>
+  <div class="sep"></div>
+  <button class="btn icon" id="dUndo" type="button" aria-label="Undo" data-tip="Undo (Ctrl Z)" disabled><span data-icon="undo"></span></button>
+  <button class="btn icon" id="dRedo" type="button" aria-label="Redo" data-tip="Redo (Ctrl Shift Z)" disabled><span data-icon="redo"></span></button>
+  <button class="btn icon" id="dHelp" type="button" aria-label="Help and shortcuts" data-tip="Help (?)"><span data-icon="help"></span></button>
+  <div class="sep"></div>
+  <button class="btn" id="dDone" type="button" data-tip="Back to the dashboard (E)"><span data-icon="check"></span><span class="lbl">Done</span></button>
+</nav>
+
+<nav id="viewbar" class="glass-ui" data-ui aria-label="Dashboard controls">
+  <button class="btn" id="vEdit" type="button" data-tip="Edit the layout (E)"><span data-icon="edit"></span><span class="lbl">Edit</span></button>
+  <button class="btn" id="vScenes" type="button" data-tip="Starter scenes"><span data-icon="layers"></span><span class="lbl">Scenes</span></button>
+  <button class="btn icon" id="vShade" type="button" aria-label="Privacy shade" data-tip="Privacy shade (P)"><span data-icon="lock"></span></button>
+  <button class="btn icon" id="vFull" type="button" aria-label="Full screen" data-tip="Full screen (F)"><span data-icon="expand"></span></button>
+</nav>
+
+<div id="shade" data-ui aria-hidden="true">
+  <div class="pane"><button class="unlock" id="shadeOff" type="button"><span data-icon="unlock"></span>Reveal <span class="kbd">P</span></button></div>
+</div>
+
+<div id="toasts" data-ui aria-live="polite"></div>
+<pre id="test-out" hidden></pre>
+
+<script src="js/geometry.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/store.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

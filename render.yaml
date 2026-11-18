@@ -1,0 +1,21 @@
+# Render Blueprint: deploys Second Screen as a static site (no build step).
+services:
+  - type: web
+    runtime: static
+    name: second-screen
+    buildCommand: echo "No build step. Static files only."
+    staticPublishPath: .
+    autoDeployTrigger: commit
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /js/*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /css/*
+        name: Cache-Control
+        value: public, max-age=3600
