@@ -6,6 +6,8 @@ An ambient dashboard for your spare monitor. Clocks, timers, tasks and notes tha
 
 It is a static web page: no build step, no account, no server. Open it, pick a scene, and leave it running full screen.
 
+**[Open Second Screen →](https://nathanielhshannon.com/second-screen/)**
+
 ## What you can do
 
 - **Start from a scene.** Seven starter scenes (Quiet Desk, Concrete Room, Night Drive, Terminal, Paper Studio, Deep Work, Blank Canvas), each laid out for landscape, portrait and ultrawide screens.
