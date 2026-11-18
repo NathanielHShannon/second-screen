@@ -6,7 +6,7 @@ An ambient dashboard for your spare monitor. Clocks, timers, tasks and notes tha
 
 It is a static web page: no build step, no account, no server. Open it, pick a scene, and leave it running full screen.
 
-**[Open Second Screen →](https://nathanielhshannon.com/second-screen/)**
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/NathanielHShannon/second-screen)
 
 ## What you can do
 
